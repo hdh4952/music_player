@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MusicPlayer</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/playmusic.css" />
+  </head>
+  <body>
+    <header class="header">
+      <i class="fa-solid fa-arrow-left fa-2x"></i>
+      <i class="fa-solid fa-ellipsis-vertical fa-2x"></i>
+    </header>
+
+    <main class="main">
+      <div class="main__album"></div>
+      <span class="main__playBtn">
+        <i class="fa-solid fa-circle-play fa-3x"></i>
+      </span>
+    </main>
+
+    <div class="play-bar">
+      <i class="fa-solid fa-backward"></i>
+      <input name="slider" type="range" value="0" />
+      <i class="fa-solid fa-forward"></i>
+    </div>
+
+    <div class="song">
+      <div class="song__info">
+        <div class="song__title">대충 노래 제목</div>
+        <div class="song__text">대충 노래 부른 사람</div>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <div class="nav__list">
+        <div>
+          <a><i class="fa-solid fa-bars fa-2x"></i></a>
+        </div>
+        <div>
+          <a><i class="fa-solid fa-house fa-2x"></i></a>
+        </div>
+        <div>
+          <a><i class="fa-solid fa-music fa-2x"></i></a>
+        </div>
+      </div>
+    </nav>
+
+    <script
+      src="https://kit.fontawesome.com/b9298903aa.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
