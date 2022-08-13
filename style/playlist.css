@@ -1,7 +1,7 @@
 /* 기본 레이아웃 */
 
 body {
-    background-color: #cee5d0;
+    background-color: white;
 }
 
 .header {
@@ -10,7 +10,7 @@ body {
     align-items: center;
     height: 80px;
     width: 100%;
-    background-color: #94b49f;
+    background-color: white;
     padding: 0px 20px;
 }
 .nav {
@@ -21,7 +21,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 40px 10px #e2e2e2;
 }
   
 .nav__list {
