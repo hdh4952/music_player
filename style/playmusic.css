@@ -1,4 +1,4 @@
-.nav__list > div:nth-child(3) {
+.nav__list > a:nth-child(3) {
   background-color: var(--main-color);
 }
 
@@ -33,6 +33,7 @@
   background-size: cover;
   border-radius: 50%;
   animation: moveAlbum 20s linear infinite;
+  animation-play-state: running;
 }
 
 .main__img {
@@ -44,7 +45,7 @@
 .main__playBtn {
   position: absolute;
   display: flex;
-  background-color: #cee5d0;
+  background-color: var(--main-color);
   border-radius: 50%;
   color: black;
   width: 100px;
