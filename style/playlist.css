@@ -1,0 +1,95 @@
+/* 기본 레이아웃 */
+
+body {
+    background-color: #cee5d0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    background-color: #94b49f;
+    padding: 0px 20px;
+}
+.nav {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.5);
+}
+  
+.nav__list {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.nav__list > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 33%;
+}
+  
+.nav__list > div:nth-child(1) {
+    background-color: #94b49f;
+}
+  
+
+/* playlist */
+.music_box_container{
+    display: grid;
+    grid-template-columns: 0.6fr 1.5fr 0.5fr;
+    grid-template-rows: repeat(2, auto);
+    height: 63px;
+    margin-top: 13px;
+    margin-bottom: 13px;
+    background-color: #afcdb9;
+}
+
+.album_photo{ /* 앨범 사진 */
+    grid-column: 1 / 2;
+	grid-row: 1 / 3;
+    text-align: center;
+
+}
+
+.album_image{ /* 앨범 사진의 크기 조절 */
+    height: 61px;
+    width: 63px;
+}
+
+.music_title{ /* 노래 제목 */
+    grid-column: 2 / 3;
+	grid-row: 1 / 2;
+    text-align: left;
+    font-weight: bolder;
+    font-size: 23px;
+}
+
+.artist_name{ /* 가수 이름 */
+    grid-column: 2 / 3;
+	grid-row: 2 / 3;
+    text-align: left;
+    font-weight: lighter;
+    font-size: 15px;
+}
+
+.play_BTN{ /* 재생버튼 위치 조절 */
+    grid-column: 3 / 4;
+	grid-row: 1 / 3;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+
+
+
