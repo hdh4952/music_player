@@ -1,1 +1,8 @@
 @import "reset.css";
+@import "header.css";
+@import "nav.css";
+
+:root {
+  --main-color: #e2e2e2;
+  background-color: white;
+}
