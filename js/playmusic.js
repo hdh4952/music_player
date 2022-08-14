@@ -1,16 +1,20 @@
 import song from "./song.js";
 
-console.log(song);
 const playBtn = document.querySelector(".main__playBtn");
 const bgImg = document.querySelector(".main__album");
+let song_title = document.querySelector(".song__title");
+let song_artist = document.querySelector(".song__text");
 bgImg.style.animationPlayState = "paused";
 
 function searchParam(key) {
     return new URLSearchParams(location.search).get(key);
 };
 
+const songIdx = parseInt(searchParam('id'));
 let audio = new Audio();
-audio.src = song[parseInt(searchParam('id'))].src;
+audio.src = song[songIdx].src;
+song_title.innerText = `${song[songIdx].title}`;
+song_artist.innerText = `${song[songIdx].artist}`;
 
 const onClickPlayBtn = (e) => {
     e.target.classList.toggle("fa-circle-play");
