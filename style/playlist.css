@@ -3,6 +3,10 @@
 }
 
 /* playlist */
+.main_container{
+  overflow: scroll;
+}
+
 .music_box_container {
   display: grid;
   grid-template-columns: 0.6fr 1.5fr 0.5fr;
