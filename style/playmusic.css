@@ -33,7 +33,7 @@
   background-size: cover;
   border-radius: 50%;
   animation: moveAlbum 20s linear infinite;
-  animation-play-state: running;
+  animation-play-state: paused;
 }
 
 .main__img {

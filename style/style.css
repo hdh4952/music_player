@@ -6,3 +6,8 @@
   --main-color: #e2e2e2;
   background-color: white;
 }
+
+#container {
+  height: 79vh;
+  width: 100vw;
+}
