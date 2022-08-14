@@ -7,7 +7,9 @@ let song_artist = document.querySelector(".song__text");
 bgImg.style.animationPlayState = "paused";
 
 function searchParam(key) {
-    return new URLSearchParams(location.search).get(key);
+    const result = new URLSearchParams(location.search).get(key);
+    if(result) return result;
+    return 0;
 };
 
 const songIdx = parseInt(searchParam('id'));
