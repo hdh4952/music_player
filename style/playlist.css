@@ -1,9 +1,9 @@
-.nav__list > div:nth-child(1) {
-  background-color: var(--main-color);
+.nav__list > a:nth-child(1) {
+  border-top: 5px solid var(--main-color);
 }
 
 /* playlist */
-.main_container{
+.main_container {
   overflow: scroll;
 }
 

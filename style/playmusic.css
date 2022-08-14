@@ -1,5 +1,5 @@
 .nav__list > a:nth-child(3) {
-  background-color: var(--main-color);
+  border-top: 5px solid var(--main-color);
 }
 
 .main {
