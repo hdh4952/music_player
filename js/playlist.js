@@ -21,7 +21,7 @@ for(let i=0 ; i<song.length ; i++) {
           <p>${song[i].artist}</p>
         </div>
         <div class="play_BTN">
-          <a><i class="fa-solid fa-play fa-2x"></i></a>
+          <a><i id="${i}" class="fa-solid fa-play fa-2x"></i></a>
         </div>
       </div>`;
 }
@@ -29,8 +29,17 @@ for(let i=0 ; i<song.length ; i++) {
 const playBtn = document.querySelectorAll(".play_BTN");
 
 const change_playBTN = (e) => {
-    e.target.classList.toggle("fa-play");
-    e.target.classList.toggle("fa-pause");
+  e.target.classList.toggle("fa-play");
+  e.target.classList.toggle("fa-pause");
+
+  let audio = new Audio();
+  audio.src = song[parseInt(e.target.id)].src;
+
+  if(audio.paused) {
+    audio.play();
+  } else {
+    audio.pause();
+  }
 }
 
 for(let i=0; i < song.length; i++){
