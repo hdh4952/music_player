@@ -17,7 +17,7 @@
   align-items: center;
 }
 
-.nav__list > div {
+.nav__list > a {
   display: flex;
   justify-content: center;
   align-items: center;
