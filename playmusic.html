@@ -10,47 +10,46 @@
   </head>
   <body>
     <header class="header">
-      <i class="fa-solid fa-arrow-left fa-2x"></i>
-      <i class="fa-solid fa-ellipsis-vertical fa-2x"></i>
+      <a href="index.html"><i class="fa-solid fa-arrow-left fa-2x"></i></a>
+      <a href="#"><i class="fa-solid fa-ellipsis-vertical fa-2x"></i></a>
     </header>
 
-    <main class="main">
-      <div class="main__album"></div>
-      <span class="main__playBtn">
-        <i class="fa-solid fa-circle-play fa-3x"></i>
-      </span>
-    </main>
+    <div id="container">
+      <main class="main">
+        <div class="main__album"></div>
+        <span class="main__playBtn">
+          <i class="fa-solid fa-circle-play fa-3x"></i>
+        </span>
+      </main>
 
-    <div class="play-bar">
-      <i class="fa-solid fa-backward"></i>
-      <input name="slider" type="range" value="0" />
-      <i class="fa-solid fa-forward"></i>
-    </div>
-
-    <div class="song">
-      <div class="song__info">
-        <div class="song__title">ATTENTION</div>
-        <div class="song__text">NEW JEANS</div>
+      <div class="play-bar">
+        <i class="fa-solid fa-backward"></i>
+        <input name="slider" type="range" value="50" />
+        <i class="fa-solid fa-forward"></i>
       </div>
-    </div>
 
-    <nav class="nav">
-      <div class="nav__list">
-        <div>
-          <a><i class="fa-solid fa-bars fa-2x"></i></a>
-        </div>
-        <div>
-          <a><i class="fa-solid fa-house fa-2x"></i></a>
-        </div>
-        <div>
-          <a><i class="fa-solid fa-music fa-2x"></i></a>
+      <div class="song">
+        <div class="song__info">
+          <div class="song__title">ATTENTION</div>
+          <div class="song__text">NEW JEANS</div>
         </div>
       </div>
-    </nav>
+
+      <nav class="nav">
+        <div class="nav__list">
+          <a href="#"><i class="fa-solid fa-bars fa-2x"></i></a>
+          <a href="index.html"><i class="fa-solid fa-house fa-2x"></i></a>
+          <a href="#"><i class="fa-solid fa-music fa-2x"></i></a>
+        </div>
+      </nav>
+    </div>
 
     <script
       src="https://kit.fontawesome.com/b9298903aa.js"
       crossorigin="anonymous"
     ></script>
+    <script src="js/header.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/playmusic.js"></script>
   </body>
 </html>
