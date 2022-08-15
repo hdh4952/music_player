@@ -24,29 +24,42 @@ for(let i=0 ; i<song.length ; i++) {
           <a><i id="${i}" class="fa-solid fa-play fa-2x"></i></a>
         </div>
       </div>`;
-}
+};
 
 const playBtn = document.querySelectorAll(".play_BTN");
+let audio = [];
+
+for(let i=0; i < song.length; i++){
+  let newAudio = new Audio();
+  newAudio.src = song[i].src;
+  audio.push(newAudio);
+};
 
 const change_playBTN = (e) => {
   e.target.classList.toggle("fa-play");
   e.target.classList.toggle("fa-pause");
-  console.log(e.target.classList[2]);
+  const id = e.target.id;
 
-  const songIdx = parseInt(e.target.id);
-  let audio = new Audio();
-  audio.src = song[songIdx].src;
-  console.log(songIdx);
-  console.log(audio.src);
-
-  if(e.target.classList[2] == "fa-pause") {
-    audio.play();
-    console.log("재생중임요");
+  if(audio[id].paused) {
+    audio[id].play();
   } else {
-    audio.pause();
-    console.log("정지함요");
-  }
-}
+    audio[id].pause();
+  };
+
+  for(let i = 0; i < id; i++){
+    if(audio[i].paused == false) {
+      document.getElementById(`${i}`).className = "fa-solid fa-play fa-2x";
+      audio[i].pause();
+    }
+  };
+
+  for(let i = song.length - 1; i > id; i--){
+    if(audio[i].paused == false) {
+      document.getElementById(`${i}`).className = "fa-solid fa-play fa-2x";
+      audio[i].pause();
+    };
+  };
+};
 
 for(let i=0; i < song.length; i++){
     playBtn[i].addEventListener("click", change_playBTN);

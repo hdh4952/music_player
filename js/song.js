@@ -8,6 +8,11 @@ const song = [
         "artist": "FLERO",
         "title": "shade",
         "src": "./song/FLERO-shade.mp3"
+    },
+    {
+        "artist": "Tobu",
+        "title": "Hope",
+        "src": "./song/Tobu-Hope.mp3"
     }
 ]
 
