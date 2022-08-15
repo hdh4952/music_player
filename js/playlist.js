@@ -31,14 +31,20 @@ const playBtn = document.querySelectorAll(".play_BTN");
 const change_playBTN = (e) => {
   e.target.classList.toggle("fa-play");
   e.target.classList.toggle("fa-pause");
+  console.log(e.target.classList[2]);
 
+  const songIdx = parseInt(e.target.id);
   let audio = new Audio();
-  audio.src = song[parseInt(e.target.id)].src;
+  audio.src = song[songIdx].src;
+  console.log(songIdx);
+  console.log(audio.src);
 
-  if(audio.paused) {
+  if(e.target.classList[2] == "fa-pause") {
     audio.play();
+    console.log("재생중임요");
   } else {
     audio.pause();
+    console.log("정지함요");
   }
 }
 
