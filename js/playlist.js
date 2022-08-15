@@ -50,7 +50,8 @@ const change_playBTN = (e) => {
     if(audio[i].paused == false) {
       document.getElementById(`${i}`).className = "fa-solid fa-play fa-2x";
       audio[i].pause();
-    }
+    };
+    audio[i].currentTime = 0;
   };
 
   for(let i = song.length - 1; i > id; i--){
@@ -58,6 +59,7 @@ const change_playBTN = (e) => {
       document.getElementById(`${i}`).className = "fa-solid fa-play fa-2x";
       audio[i].pause();
     };
+    audio[i].currentTime = 0;
   };
 };
 
