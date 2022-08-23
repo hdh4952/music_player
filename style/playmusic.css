@@ -62,10 +62,6 @@
   align-items: center;
 }
 
-.play-bar input[type="range"] {
-  width: 200px;
-}
-
 .song {
   height: 150px;
   display: flex;

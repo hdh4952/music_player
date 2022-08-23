@@ -1,16 +1,28 @@
 import song from "./song.js";
 
 const playBtn = document.querySelector(".main__playBtn");
-const bgImg = document.querySelector(".main__album");
-let song_title = document.querySelector(".song__title");
-let song_artist = document.querySelector(".song__text");
-bgImg.style.animationPlayState = "paused";
+const mainAlbum = document.querySelector(".main__album");
+const song_title = document.querySelector(".song__title");
+const song_artist = document.querySelector(".song__text");
+mainAlbum.style.animationPlayState = "paused";
 
-function searchParam(key) {
+const searchParam = (key) => {
     const result = new URLSearchParams(location.search).get(key);
     if(result) return result;
     return 0;
 };
+
+const onClickPlayBtn = (e) => {
+    changePlayBtnImage();
+    audio.paused ? audio.play() : audio.pause();
+};
+
+const changePlayBtnImage = () => {
+    const playBtnImg = playBtn.querySelector("i");
+    playBtnImg.classList.toggle("fa-circle-play");
+    playBtnImg.classList.toggle("fa-circle-pause");
+    mainAlbum.style.animationPlayState = mainAlbum.style.animationPlayState == "paused" ? "running" : "paused";
+}
 
 const songIdx = parseInt(searchParam('id'));
 let audio = new Audio();
@@ -18,16 +30,23 @@ audio.src = song[songIdx].src;
 song_title.innerText = `${song[songIdx].title}`;
 song_artist.innerText = `${song[songIdx].artist}`;
 
-const onClickPlayBtn = (e) => {
-    e.target.classList.toggle("fa-circle-play");
-    e.target.classList.toggle("fa-circle-pause");
-    bgImg.style.animationPlayState = bgImg.style.animationPlayState == "paused" ? "running" : "paused";
+mainAlbum.addEventListener("click", onClickPlayBtn);
+playBtn.addEventListener("click", onClickPlayBtn);
+audio.addEventListener("ended", ()=>{
+    audio.remove();
+    changePlayBtnImage();
+});
 
-    if(audio.paused) {
-        audio.play();
-    } else {
-        audio.pause();
-    }
+const checkAudio = () => {
+    progress.removeAttribute('value');
+    progress.value = Math.floor((audio.currentTime / audio.duration) * 100);
+};
+
+let playAudio = setInterval(checkAudio, 1000);
+
+const changeProgress = (e) => {
+    audio.currentTime = Math.floor((audio.duration) * e.target.value / 100);
 }
 
-playBtn.addEventListener("click", onClickPlayBtn);
+const progress = document.querySelector("input");
+progress.addEventListener("change", changeProgress);
